@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: addressbookloadbalancer
+  labels:
+    service: addressbookloadbalancer
+spec:
+  selector:
+    app: addressbook
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 31111
+    targetPort: 8080
